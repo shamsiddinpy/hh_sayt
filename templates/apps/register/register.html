@@ -1,0 +1,34 @@
+{% extends 'apps/base.html' %}
+{% load static %}
+
+{% block main_content %}
+    <section class="forms-section">
+        <div class="forms">
+            <div class="form-wrapper is-active">
+                <form class="form form-login" method="POST" action="{% url 'register' %}">
+                    {% csrf_token %}
+                    <fieldset>
+                        <legend>Please, enter your email for login.</legend>
+                        <div class="input-block">
+                            <label for="login-email">E-mail</label>
+                            <input type="email" name="email" placeholder="Enter your email">
+                        </div>
+                    </fieldset>
+                    <button type="submit">Code</button>
+                </form>
+                <form class="form form-login" method="POST" action="{% url 'login_code' %}">
+                    {% csrf_token %}
+                    <fieldset>
+                        <legend>Enter Verification Code</legend>
+                        <div class="input-block">
+                            <label for="login-code">Code</label>
+                            <input type="text" name="code" placeholder="Enter verification code">
+                            <input type="hidden" name="email" value="{{ email }}">
+                        </div>
+                    </fieldset>
+                    <button type="{% url 'blog' %}">Login</button>
+                </form>
+            </div>
+        </div>
+    </section>
+{% endblock %}

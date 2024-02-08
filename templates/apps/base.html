@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <title> Sticky Navigation Bar | CodingLab </title>
+    <link rel="stylesheet" href="{% static 'css/css.css' %}">
+    <link rel="stylesheet" href="{% static 'css/register.css' %}">
+</head>
+<body>
+<footer>
+    <nav>
+        <a class="toshkent_link" href="#">Toshkent</a>
+        <div class="nav-content">
+            <div class="logo">
+                <a href="#"><img class="logo_image" src="{% static 'images/download.jpg' %}"></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#">Ish beruvchilar uchun</a></li>
+                <li><a href="#">Yordam</a></li>
+                <li><a href="#">
+                    <button>Rezyume yarating</button>
+                </a></li>
+                <li><a href="{% url 'register' %}">
+                    <button>Kirish uchun</button>
+                </a></li>
+            </ul>
+        </div>
+    </nav>
+</footer>
+{% block main_content %}
+
+{% endblock %}
+
+<footer>
+
+</footer>
+</div>
+
+
+</body>
+</html>
